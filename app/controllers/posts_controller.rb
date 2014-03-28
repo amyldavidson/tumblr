@@ -6,7 +6,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    @post.save!
+    @post.save
 
     redirect_to '/'
   end
@@ -14,6 +14,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :image_url)
+    params.require(:post).permit(:title, :photo)
   end
 end
